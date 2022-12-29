@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rancher-pod
+  labels:
+    app: rancher-podapp
+spec:
+  containers:
+    - name: androot
+      image: androot/androot
+      ports:
+        - containerPort: 8080
+          hostPort: 8080

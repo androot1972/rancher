@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+spec:
+  rules:
+    - host: androot.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: androot-srv
+                port:
+                  number: 80
+          - path: /xyz
+            pathType: Prefix
+            backend:
+              service:
+                name: androot-srv
+                port:
+                  number: 80
